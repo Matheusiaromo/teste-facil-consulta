@@ -22,7 +22,7 @@
                 </div>
                 <div>
                    <p>Estado/Cidade</p>
-                   <span>{{this.$store.state.form.estado}} - {{this.$store.state.form.estado}}</span>
+                   <span>{{this.$store.state.form.estado}} - {{this.$store.state.form.cidade}}</span>
                 </div>
                 <div>
                    <p>Especialidade principal</p>
@@ -48,7 +48,7 @@
                   <button  class="mt-3 btn btn-edit" @click="editarDados">{{textoEditar}}</button>
               </div>
             </div>
-             <div class="col my-auto">
+             <div class="col my-auto d-sm-block d-none">
               <img class="img w-100" src="../assets/desktop-pagina-3.png" alt="">
             </div>
           </div>

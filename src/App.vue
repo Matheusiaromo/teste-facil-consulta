@@ -18,7 +18,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   color: #8a8a8a;
 }
 
@@ -49,6 +49,10 @@ h4 {
 label {
   color: #000;
   margin-top: 18px;
+}
+
+.error {
+  color: red;
 }
 
 </style>

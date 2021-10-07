@@ -31,7 +31,7 @@ export default {
 .progresso span {
   color: var(--roxo-iv);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 0.9rem;
 }
 
 .bProgresso {

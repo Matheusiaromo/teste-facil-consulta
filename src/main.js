@@ -8,6 +8,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueMask from 'v-mask';
 import ButtonNext from '@/components/ButtonNext.vue'
 import money from 'v-money'
+import Vuelidate from 'vuelidate'
+
+
+Vue.use(Vuelidate)
  
 // register directive v-money and component <money>
 Vue.use(money, {precision: 4})

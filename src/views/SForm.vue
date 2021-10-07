@@ -42,7 +42,7 @@
                </div>
               </b-form>
             </div>
-            <div class="col my-auto">
+            <div class="col my-auto d-sm-block d-none">
               <img class="img w-100" src="../assets/desktop-pagina-2.png" alt="">
             </div>
         </div>
@@ -131,11 +131,11 @@
 }
 
  .col-form-label {
-   margin-left: 20px;
+   margin-left: 45px;
  }
 
 .custom-radio {
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .input-group-prepend .input-group-text{
@@ -144,9 +144,6 @@
   border-radius: 0px;
 }
 
-.custom-control-input {
-  background-color: var(--roxo-iv);
-}
 
 
 </style>
