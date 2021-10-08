@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   strict: true,
   state: {
+    chaveLimpaForm: false,
     form: {
       nome: "",
       cpf: "",
@@ -26,7 +27,8 @@ export default new Vuex.Store({
   actions: {
    criarForm(context, payload){
      context.commit("UPDATE_FORM", payload)
-   }
+   },
+  
   },
   modules: {
   }

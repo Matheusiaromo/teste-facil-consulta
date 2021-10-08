@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import FForm from '../views/FForm.vue'
 import SForm from '../views/SForm.vue'
 import TForm from '../views/TForm.vue'
+import CadastroConcluido from '../views/CadastroConcluido.vue'
 
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ const routes = [
         path: 'pagina-3',
         name: "TForm",
         component: TForm
+      },
+      {
+        path: 'cadastro-concluido',
+        name: "CadastroConcluido",
+        component: CadastroConcluido
       }
     ]
   }

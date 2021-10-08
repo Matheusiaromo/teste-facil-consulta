@@ -1,5 +1,5 @@
 <template>
- <button class="btn my-btn" :class="{amarelo: yellow}">{{texto}}</button>
+ <input type="button" class="btn my-btn" :value="texto" :class="{amarelo: yellow}">
 </template>
 
 <script>

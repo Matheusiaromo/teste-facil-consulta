@@ -1,12 +1,11 @@
 <template>
      
-       <div class="meu-container">
-         
+       <div class="meu-container" :key="chave">        
           <h1 class="mb-4">Sobre o profissional</h1>
           <div class="row">           
             <div class="col">
               <h4 class="mb-3">Dados do profissional</h4>
-
+              {{ chave }}
               <b-form>
               <b-form-group
                 id="input-group-1"
@@ -52,8 +51,8 @@
                   v-mask="'(##) # ####-####'"
                   @change="$v.form.numero.$touch()"
                 ></b-form-input>
-               <span v-if="$v.form.numero.$error && $v.form.numero.required === false" class="error" >Esse campo é requerido</span>
-                <span v-if="$v.form.numero.required === true && $v.form.numero.$invalid === true" class="error" >Numero invalido</span>
+               <span v-if="$v.form.numero.$error && !$v.form.numero.required" class="error" >Esse campo é requerido</span>
+                <span v-if="$v.form.numero.required  && $v.form.numero.$invalid" class="error" >Numero invalido</span>
               </b-form-group>
 
               
@@ -111,6 +110,7 @@
           estado: "",
           cidade: ""      
         },
+        chave: this.$store.state.chaveLimpaForm,
         estados: [
       { 
         texto: "Paraná", 
@@ -135,6 +135,7 @@
       }
     },
     validations: {
+   
       form: {
         nome: { 
           required,
@@ -143,11 +144,11 @@
         },
         cpf: {
           required,
-          mingLength: minLength(13)
+          mingLength: minLength(14)
         },
         numero: {
           required,
-          mingLength: minLength(14)
+          mingLength: minLength(16)
         },
         estado: {
           required
@@ -161,13 +162,16 @@
       proximoForm(){
         if (!this.$v.$invalid) {
         this.$store.dispatch("criarForm", this.form)
-        this.$router.push({path: "pagina-2"})
+        this.$router.push({name: "SForm"})
+        
         } else {
-          this.$v.$touch()
+          /* this.$v.$touch() */
+          this.$store.dispatch("limpaForm")
         }
       },
-
+     
     },
+
     components: {
       Progresso
     }

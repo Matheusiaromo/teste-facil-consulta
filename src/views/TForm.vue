@@ -44,7 +44,7 @@
               </div>
               
               <div class="text-center">
-                  <ButtonNext :yellow="true" @click.native="mandar" :texto="textoConcluir"></ButtonNext><br>
+                  <ButtonNext :yellow="true" @click.native="finalizarCadastro" :texto="textoConcluir"></ButtonNext><br>
                   <button  class="mt-3 btn btn-edit" @click="editarDados">{{textoEditar}}</button>
               </div>
             </div>
@@ -65,12 +65,15 @@ export default {
       form: []
     }
   },
-  filters: {
-    formataValor(valor) {
-      return `R$ ${valor}`
-    }
-  },
+    filters: {
+      formataValor(valor) {
+        return `R$ ${valor},00`
+      }
+    },
   methods: {
+    finalizarCadastro(){
+      this.$router.push({name: "CadastroConcluido"})
+    },
     editarDados() {
       this.$router.go(-2)
     },
@@ -78,9 +81,6 @@ export default {
         let b = a 
         return this.$store.state.form.pagamento.includes(b)
       },
-  },
-  created(){
-    this.form = this.$store.state.form
   }
 }
 </script>

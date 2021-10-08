@@ -1,10 +1,12 @@
 <template>
     <section class="my-container">
-      <button class="previus-btn" v-if="$route.name !== 'FForm'" @click="$router.go(-1)"><img src="../assets/Vector.svg" alt=""></button>
+      <button class="previus-btn" v-if="$route.name !== 'FForm' && $route.name !== 'CadastroConcluido'" @click="$router.go(-1)"><img src="../assets/Vector.svg" alt=""></button>
       <keep-alive>
       <router-view></router-view>   
       </keep-alive>
+       <span v-if="$route.name === 'CadastroConcluido'" class="dev">Desenvolvido por - <a>Matheus Morais</a></span>
     </section>
+    
 </template>
 
 <script>
@@ -40,6 +42,12 @@ export default {
   border: none;
   transform: scale(2);
   background-color: transparent;
+}
+
+.dev {
+  position: absolute;
+  bottom: -30px;
+  
 }
 
 </style>
